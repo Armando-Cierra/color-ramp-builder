@@ -18,6 +18,9 @@ body {
   font-family: var(--font_montserrat);
   font-size: var(--text_size_body);
   font-weight: var(--text_weight_regular);
+  overflow: hidden;
+  --rt-opacity: 1 !important
+;
 }
 
 a,
@@ -65,4 +68,60 @@ svg {
 
 .react-tooltip {
   z-index: 1000;
+}
+
+#css-theme-builder {
+  z-index: 1500;
+}
+
+div[data-focus-lock-disabled] {
+  position: absolute;
+}
+
+.Toastify__toast-container {
+  width: auto;
+  .Toastify__toast {
+    background: var(--theme_background_contrast_1);
+    width: fit-content;
+    min-height: auto;
+    color: var(--theme_text_contrast);
+    .Toastify__toast-body {
+      margin: 0;
+      padding: 0;
+    }
+    .Toastify__close-button {
+      display: none;
+    }
+  }
+}
+
+@media (width <= 480px) {
+  .Toastify__toast-container {
+    width: 100%;
+    .Toastify__toast {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #397524 #DFE9EB;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: var(--theme_background_3);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--theme_background_4);
 }
