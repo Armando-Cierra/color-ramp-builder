@@ -16,7 +16,7 @@ interface Props
 
 export const Dropdown = Object.assign(
   ({ className: customClassName, children, value, ...rest }: Props) => {
-    const { options, isOpen, toggleDropdown, closeDropdown } =
+    const { options, isOpen, toggleDropdown, closeDropdown, handleKeyDown } =
       useDropdown(children);
 
     return (
@@ -33,7 +33,9 @@ export const Dropdown = Object.assign(
           </button>
           {isOpen && (
             <FocusLock>
-              <div className="drodpwn_menu">{options}</div>
+              <div className="drodpwn_menu" onKeyDown={handleKeyDown}>
+                {options}
+              </div>
             </FocusLock>
           )}
         </div>

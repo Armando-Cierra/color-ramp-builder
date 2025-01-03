@@ -1,0 +1,32 @@
+.mainColors {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .mainColors_box {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    .mainColor_colorPicker {
+      width: 225px;
+      .react-colorful {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .mainColor_colorPicker_control {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .mainColor_colorPicker_control_label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.5rem;
+          height: 36px;
+        }
+      }
+      .input {
+        width: 100%;
+      }
+    }
+  }
+}

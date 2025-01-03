@@ -1,6 +1,7 @@
 import {
   Children,
   isValidElement,
+  KeyboardEvent,
   ReactElement,
   ReactNode,
   useState,
@@ -21,10 +22,15 @@ export const useDropdown = (children: ReactNode) => {
   const toggleDropdown = () => setIsOpen(!isOpen);
   const closeDropdown = () => setIsOpen(false);
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') closeDropdown();
+  };
+
   return {
     options,
     isOpen,
     toggleDropdown,
     closeDropdown,
+    handleKeyDown,
   };
 };
