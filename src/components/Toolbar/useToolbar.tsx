@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import { ColorMode } from '@/types';
 
 export const useToolbar = () => {
+  const navigate = useNavigate();
   const isElectron = navigator.userAgent.toLowerCase().includes('electron');
   const getPlatform = () => {
     //@ts-expect-error | checks if userAgentData is available on the browser. This is abeta feature and that's why TS is not detecting it as an existing type.
@@ -30,11 +32,13 @@ export const useToolbar = () => {
   const isWindows = platform.includes('win');
 
   const { pathname } = useLocation();
-  const [theme, setTheme] = useState(localStorage.getItem('colormode'));
+  const [theme, setTheme] = useState<ColorMode>(
+    (localStorage.getItem('colormode') as ColorMode) ?? 'light',
+  );
   const [lang, setLang] = useState(i18next.language);
   const { t } = useTranslation();
 
-  const changeTheme = (selectedTheme: 'light' | 'dark' | 'auto') => () => {
+  const changeTheme = (selectedTheme: ColorMode) => () => {
     if (selectedTheme === 'auto') {
       const systemPreference = window.matchMedia(
         '(prefers-color-scheme: light)',
@@ -60,7 +64,19 @@ export const useToolbar = () => {
     setLang(lang);
   };
 
-  console.log({ isElectron, isMac, isWindows });
+  const navigateToHome = () => navigate('/');
+
+  const minimizeWindows = () => {
+    window.electronAPI.minimize();
+  };
+
+  const maximizeWindows = () => {
+    window.electronAPI.maximize();
+  };
+
+  const closeWindows = () => {
+    window.electronAPI.close();
+  };
 
   return {
     t,
@@ -72,5 +88,9 @@ export const useToolbar = () => {
     isElectron,
     isMac,
     isWindows,
+    navigateToHome,
+    minimizeWindows,
+    maximizeWindows,
+    closeWindows,
   };
 };

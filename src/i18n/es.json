@@ -3,16 +3,56 @@
     "accept": "Aceptar",
     "cancel": "Cancelar",
     "edit": "Editar",
+    "create": "Crear",
     "delete": "Borrar",
     "addFavorite": "Agregar a Favoritos",
     "removeFavorite": "Quitar de Favoritos",
     "save": "Guardar",
     "saveChanges": "Guardar Cambios",
-    "discardChanges": "Descartar Cambios"
+    "discardChanges": "Descartar Cambios",
+    "goBack": "Regresar",
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro",
+    "inactive": "Inactivo",
+    "active": "Activo",
+    "resolution": "Esta resolución no está disponible actualmente. Por favor, use una resolución más amplia."
   },
   "toolbar": {
-    "auto": "Modo Basado en el Sistema",
-    "light": "Modo Claro",
-    "dark": "Modo Oscuro"
+    "auto": "Automático"
+  },
+  "home": {
+    "description": "Color Ramp Builder es una aplicación hecha para diseñadores y programadores, facilitando la creación de escalas de color dinámicas y personalizables.",
+    "cards": {
+      "newColorRamp": "Nueva Escala",
+      "savedColorRamps": "Escalas Guardadas",
+      "github": "Proyecto de Github"
+    }
+  },
+  "editor": {
+    "saveColorRamp": "Guardar Escala",
+    "modalTitle": "Editar Nombre de la Escala",
+    "settings": {
+      "title": "Configuraciones",
+      "inlineNotification": "El máximo de pasos es limitado a 15 para garantizar un contraste claro entre diferentes modos de interpolación",
+      "amountOfSteps": "Cantidad de Pasos",
+      "interpolationMode": "Modo de Interpolación",
+      "modal": {
+        "title": "Cerrar Notificación",
+        "description": "Ocultar esta notificación en el futuro.",
+        "accept": "Si",
+        "no": "No"
+      }
+    },
+    "mainColors": {
+      "title": "Colores Principales",
+      "extremeLeft": "Extremo Izquierdo",
+      "central": "Central",
+      "extremeRight": "Extremo Derecho"
+    },
+    "colorRamp": {
+      "title": "Escala de Colores",
+      "percentages": "Porcentajes",
+      "description": "Controla la cantidad de contraste para cada paso en la escala."
+    }
   }
 }

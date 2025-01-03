@@ -3,16 +3,56 @@
     "accept": "Accept",
     "cancel": "Cancel",
     "edit": "Edit",
+    "create": "Create",
     "delete": "Delete",
     "addFavorite": "Add To Favorites",
     "removeFavorite": "Remove From Favorites",
     "save": "Save",
     "saveChanges": "Save Changes",
-    "discardChanges": "Discard Changes"
+    "discardChanges": "Discard Changes",
+    "goBack": "Go Back",
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "inactive": "Inactive",
+    "active": "Active",
+    "resolution": "This screen resolution is not currently supported. Please use a wider resolution."
   },
   "toolbar": {
-    "auto": "System Based Mode",
-    "light": "Light Mode",
-    "dark": "Dark Mode"
+    "auto": "Automatic"
+  },
+  "home": {
+    "description": "Color Ramp Builder is an App made for designers and for developers, facilitating the creation of custom and dynamic color ramps for design systems.",
+    "cards": {
+      "newColorRamp": "New Color Ramp",
+      "savedColorRamps": "Saved Color Ramps",
+      "github": "Github Project"
+    }
+  },
+  "editor": {
+    "saveColorRamp": "Save Color Ramp",
+    "modalTitle": "Edit Color Ramp Name",
+    "settings": {
+      "title": "Settings",
+      "inlineNotification": "The maximum number of steps is limited to 15 to ensure clear contrast between colors across different interpolation modes",
+      "amountOfSteps": "Amount of Steps",
+      "interpolationMode": "Interpolation Mode",
+      "modal": {
+        "title": "Close Notification",
+        "description": "Hide this notification in the future.",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "mainColors": {
+      "title": "Main Colors",
+      "extremeLeft": "Extreme Left",
+      "central": "Central",
+      "extremeRight": "Extreme Right"
+    },
+    "colorRamp": {
+      "title": "Color Ramp",
+      "percentages": "Percentages",
+      "description": "Controls the amount of constrast for each step in teh scale."
+    }
   }
 }

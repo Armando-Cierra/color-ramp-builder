@@ -1,34 +1,45 @@
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { IconPlus, IconBookmark, IconBrandGithub } from '@tabler/icons-react';
 import { Card } from '@/components';
 import './home.scss';
 
 export const Home = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="home">
-      <p className="home_description">
-        CSS Theme Builder is an App made for designers and for developers,
-        facilitating the creation of custom and dynamic style sheets using CSS
-        variables.
-      </p>
+    <motion.div
+      className="home"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+    >
+      <p className="home_description">{t('home.description')}</p>
       <div className="home_contentBox">
         <Card
           isInnerLink
           icon={<IconPlus />}
-          text="New Theme"
+          text={t('home.cards.newColorRamp')}
           linksTo="/editor"
         />
         <Card
           isInnerLink
           icon={<IconBookmark />}
-          text="Saved Themes"
-          linksTo="/saved-themes"
+          text={t('home.cards.savedColorRamps')}
+          linksTo="/saved-color-ramps"
         />
         <Card
           icon={<IconBrandGithub />}
-          text="GitHub Project"
+          text={t('home.cards.github')}
           linksTo="https://github.com/Armando-Cierra/css-theme-builder"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };

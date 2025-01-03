@@ -1,4 +1,11 @@
-import { IconBrightnessHalf, IconSun, IconMoon } from '@tabler/icons-react';
+import {
+  IconBrightnessHalf,
+  IconSun,
+  IconMoon,
+  IconX,
+  IconMinus,
+  IconSquares,
+} from '@tabler/icons-react';
 import { Logotype, Button, ButtonGroup } from '@/components';
 import { tooltipID } from '@/utils';
 import { useToolbar } from './useToolbar';
@@ -14,12 +21,21 @@ export const Toolbar = () => {
     activeLang,
     isElectron,
     isMac,
-    // isWindows,
+    navigateToHome,
+    isWindows,
+    minimizeWindows,
+    maximizeWindows,
+    closeWindows,
   } = useToolbar();
 
   return (
     <section className="toolbar">
-      <Logotype isDetached={pathname === '/'} isOnMac={isElectron && isMac} />
+      <Logotype
+        theme={theme}
+        isDetached={pathname === '/'}
+        isOnMac={isElectron && isMac}
+        onClick={navigateToHome}
+      />
       <div className="toolbar_controls">
         <div className="toolbar_controls_colorModeBox">
           <Button
@@ -34,7 +50,7 @@ export const Toolbar = () => {
           </Button>
           <Button
             data-tooltip-id={tooltipID}
-            data-tooltip-content={t('toolbar.light')}
+            data-tooltip-content={t('general.light')}
             iconOnly
             variant="ghost"
             isSelected={theme === 'light'}
@@ -44,7 +60,7 @@ export const Toolbar = () => {
           </Button>
           <Button
             data-tooltip-id={tooltipID}
-            data-tooltip-content={t('toolbar.dark')}
+            data-tooltip-content={t('general.dark')}
             iconOnly
             variant="ghost"
             isSelected={theme === 'dark'}
@@ -72,6 +88,31 @@ export const Toolbar = () => {
           </Button>
         </ButtonGroup>
       </div>
+      {isWindows && isElectron && (
+        <>
+          <div className="windowsControlsSpace" />
+          <div className="windowsControls">
+            <button
+              className="windowsControls_button"
+              onClick={minimizeWindows}
+            >
+              <IconMinus />
+            </button>
+            <button
+              className="windowsControls_button"
+              onClick={maximizeWindows}
+            >
+              <IconSquares />
+            </button>
+            <button
+              className="windowsControls_button windowsControls_button--exit"
+              onClick={closeWindows}
+            >
+              <IconX />
+            </button>
+          </div>
+        </>
+      )}
     </section>
   );
 };

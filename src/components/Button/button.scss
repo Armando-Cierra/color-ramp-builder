@@ -20,20 +20,32 @@
 }
 
 .button {
+  width: fit-content;
+  height: 36px;
   border: none;
-  padding: 4px 8px;
+  padding: 0 8px;
   border-radius: 8px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 4px;
   cursor: pointer;
+  transition: ease-in-out;
   &:focus-visible {
-    box-shadow: 0 0 0 4px var(--theme_outline);
+    box-shadow: 0 0 0 2px var(--theme_outline);
   }
   svg {
+    pointer-events: none;
     flex-shrink: 0;
     max-width: 24px;
   }
+  &:active {
+    transform: scale(1.03);
+  }
+}
+
+.button--isFullWidth {
+  width: 100%;
 }
 
 .button--default {
@@ -70,10 +82,15 @@
     background: var(--theme_background_contrast_2);
   }
   @include interactiveSemantics();
+  &:focus-visible {
+    box-shadow:
+      0 0 0 1px var(--theme_border),
+      0 0 0 3px var(--theme_outline);
+  }
 }
 
 .button.button--iconOnly {
-  width: 27px;
-  height: 27px;
+  width: 36px;
+  height: 36px;
   justify-content: center;
 }

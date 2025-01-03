@@ -1,0 +1,64 @@
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  &:has(input:focus-visible) {
+    .control {
+      box-shadow:
+        0 0 0 1px var(--theme_border),
+        0 0 0 3px var(--theme_outline);
+    }
+  }
+  &:has(input:checked) .control {
+    background: var(--theme_background_contrast_1);
+  }
+  &:has(input:checked) .control::after {
+    background: var(--theme_background_1);
+    right: 2px;
+  }
+  .control {
+    width: 40px;
+    height: 20px;
+    background: var(--theme_background_1);
+    border: 1px solid var(--theme_border);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: ease-in-out 0.15s;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--theme_background_contrast_4);
+      right: calc(100% - 18px);
+      transition: ease-in-out 0.15s;
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .switch_labelBox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .label {
+    color: var(--theme_text_muted);
+    font-size: var(--font_size_small);
+  }
+  .switch_tooltipBox {
+    height: 18px;
+  }
+  svg {
+    width: 18px;
+    height: 18px;
+    color: var(--theme_text_muted);
+  }
+}
