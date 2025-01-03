@@ -1,4 +1,4 @@
-export const tooltipID = 'css-theme-builder';
+export const tooltipID = 'color-ramp-builder';
 
 export const tooltipStyles = {
   opacity: 1,
