@@ -6,6 +6,7 @@ import './header.scss';
 export const Header = () => {
   const {
     t,
+    navigate,
     colorRampName,
     handleSubmit,
     isOpen,
@@ -35,17 +36,15 @@ export const Header = () => {
 
       {/* Content */}
       <div className="editor_header">
-        <Button variant="default">
+        <Button variant="default" onClick={() => navigate('/')}>
           <IconArrowLeft />
           {t('general.goBack')}
         </Button>
         <div className="editor_header_content">
-          <div className="editor_header_content_title">
-            <h1>{colorRampName}</h1>
-            <Button iconOnly onClick={openModal}>
-              <IconEdit />
-            </Button>
-          </div>
+          <h1>{colorRampName}</h1>
+          <Button iconOnly onClick={openModal}>
+            <IconEdit />
+          </Button>
           <Button variant="contrast">{t('editor.saveColorRamp')}</Button>
         </div>
       </div>

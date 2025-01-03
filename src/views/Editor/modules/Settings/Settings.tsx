@@ -5,16 +5,18 @@ import {
   Button,
   Input,
   Checkbox,
+  Dropdown,
 } from '@/components';
 import { useSettings } from './useSettings';
 import './settings.scss';
+import { InterpolationModes } from '@/types';
 
 export const Settings = () => {
   const {
     t,
     steps,
-    // interpolationMode,
-    // interpolationModes,
+    selectedInterpolationMode,
+    interpolationModes,
     modalIsOpen,
     openModal,
     closeModal,
@@ -25,6 +27,7 @@ export const Settings = () => {
     decreaseSteps,
     handleChange,
     handleCheckbox,
+    selectInterpolationMode,
   } = useSettings();
 
   return (
@@ -74,6 +77,20 @@ export const Settings = () => {
           </div>
           <div className="editor_content_section_group">
             <span>{t('editor.settings.interpolationMode')}</span>
+            <Dropdown
+              className="editor_content_section_group_dropdown"
+              value={selectedInterpolationMode}
+            >
+              {interpolationModes.map((mode) => (
+                <Dropdown.Option
+                  key={mode}
+                  isSelected={mode === selectedInterpolationMode}
+                  onClick={selectInterpolationMode(mode as InterpolationModes)}
+                >
+                  {mode}
+                </Dropdown.Option>
+              ))}
+            </Dropdown>
           </div>
         </div>
       </div>

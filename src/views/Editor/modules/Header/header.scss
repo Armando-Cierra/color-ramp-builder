@@ -6,16 +6,12 @@
   .editor_header_content {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    .editor_header_content_title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      h1 {
-        font-size: var(--font_size_heading_2);
-        font-weight: var(--font_weight_bold);
-      }
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    h1 {
+      font-size: var(--font_size_heading_2);
+      font-weight: var(--font_weight_bold);
     }
   }
 }

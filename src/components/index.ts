@@ -8,3 +8,4 @@ export * from './Toolbar';
 export * from './Logotype';
 export * from './Card';
 export * from './Switch';
+export * from './Dropdown';

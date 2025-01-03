@@ -1,16 +1,13 @@
 import { useState, useContext, ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { EditorContext } from '../../context';
-import { EditorContextProps } from '@/types';
+import { EditorContextProps, InterpolationModes } from '@/types';
 
 export const useSettings = () => {
   const { t } = useTranslation();
   const {
-    colorRamp: { steps, interpolationMode },
-    actions: {
-      changeSteps,
-      // changeInterpolationMode
-    },
+    colorRamp: { steps, interpolationMode: selectedInterpolationMode },
+    actions: { changeSteps, changeInterpolationMode },
   } = useContext(EditorContext) as EditorContextProps;
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [inlineNotificationIsVisible, setInlineNotificationIsVisible] =
@@ -68,6 +65,10 @@ export const useSettings = () => {
     }
   };
 
+  const selectInterpolationMode = (mode: InterpolationModes) => () => {
+    changeInterpolationMode(mode);
+  };
+
   return {
     t,
     modalIsOpen,
@@ -77,11 +78,12 @@ export const useSettings = () => {
     modalActions,
     interpolationModes,
     steps,
-    interpolationMode,
+    selectedInterpolationMode,
     increaseSteps,
     decreaseSteps,
     handleChange,
     handleCheckbox,
     inlineNotificationIsVisible,
+    selectInterpolationMode,
   };
 };

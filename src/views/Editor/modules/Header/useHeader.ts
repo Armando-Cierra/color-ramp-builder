@@ -1,10 +1,13 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { EditorContext } from '../../context';
 import { EditorContextProps } from '@/types';
 
 export const useHeader = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const {
     colorRamp: { name: colorRampName },
     actions: { changeName: changeColorRampName },
@@ -47,5 +50,6 @@ export const useHeader = () => {
     closeModal,
     handleSubmit,
     changeValue,
+    navigate,
   };
 };
