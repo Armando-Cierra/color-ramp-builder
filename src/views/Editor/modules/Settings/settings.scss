@@ -1,0 +1,35 @@
+.editor_content_modal {
+  .editor_content_modal_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .editor_content_modal_buttonBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+}
+
+.editor_content_section {
+  .inlineNotification {
+    margin-bottom: 1rem;
+  }
+  .editor_content_section_content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .editor_content_section_group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .input {
+        width: 40px;
+      }
+    }
+  }
+}

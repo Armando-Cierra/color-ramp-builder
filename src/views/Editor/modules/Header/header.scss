@@ -1,0 +1,38 @@
+.editor_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 24px;
+  .editor_header_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .editor_header_content_title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      h1 {
+        font-size: var(--font_size_heading_2);
+        font-weight: var(--font_weight_bold);
+      }
+    }
+  }
+}
+
+.editor_header_modalContent {
+  width: 100%;
+  form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .input {
+      width: 100%;
+    }
+    .editor_header_modalContent_buttonBox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
