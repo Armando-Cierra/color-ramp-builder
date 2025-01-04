@@ -10,9 +10,9 @@
       width: 225px;
       .react-colorful {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         &.react-colorful--disabled {
-          opacity: 0.5;
+          opacity: var(--theme_disabled_opacity);
           position: relative;
           .react-colorful__pointer {
             display: none;
@@ -35,7 +35,7 @@
         .mainColor_colorPicker_control_label {
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-end;
           gap: 0.5rem;
           height: 36px;
         }

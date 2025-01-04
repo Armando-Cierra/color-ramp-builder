@@ -56,6 +56,8 @@
   --theme_warning_background: #302a17;
   --theme_warning: #fbd351;
   --theme_warning_active: #fac825;
+
+  --theme_disabled_opacity: 0.5;
 }
 
 :root:has(body.light) {
@@ -100,4 +102,6 @@
   --theme_warning_background: #fef4d3;
   --theme_warning: #fac825;
   --theme_warning_active: #cca422;
+
+  --theme_disabled_opacity: 0.75;
 }
