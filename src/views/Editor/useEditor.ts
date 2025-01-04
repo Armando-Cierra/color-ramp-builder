@@ -21,16 +21,16 @@ export const useEditor = () => {
     },
     percentages: [
       '0',
-      '10',
-      '20',
-      '30',
-      '40',
-      '50',
-      '60',
-      '70',
-      '80',
-      '90',
-      '100',
+      '0.1',
+      '0.2',
+      '0.3',
+      '0.4',
+      '0.5',
+      '0.6',
+      '0.7',
+      '0.8',
+      '0.9',
+      '1',
     ],
   });
 
@@ -56,6 +56,13 @@ export const useEditor = () => {
     }));
   };
 
+  const changePercentagesAmount = (newArray: string[]) => {
+    setColorRamp((prevState) => ({
+      ...prevState,
+      percentages: newArray,
+    }));
+  };
+
   const changePercentage = (index: number, newValue: string) => {
     const newPercentages = [...colorRamp.percentages];
     newPercentages[index] = newValue;
@@ -73,6 +80,7 @@ export const useEditor = () => {
       changeInterpolationMode,
       changeColor,
       changePercentage,
+      changePercentagesAmount,
     },
   };
 };

@@ -1,19 +1,25 @@
 import { useState, useContext, ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { recalculateStepsPercentages } from '@/utils';
 import { EditorContext } from '../../context';
 import { EditorContextProps, InterpolationModes } from '@/types';
 
 export const useSettings = () => {
   const { t } = useTranslation();
+
+  // Context
   const {
     colorRamp: { steps, interpolationMode: selectedInterpolationMode },
-    actions: { changeSteps, changeInterpolationMode },
+    actions: { changeSteps, changeInterpolationMode, changePercentagesAmount },
   } = useContext(EditorContext) as EditorContextProps;
+
+  // States
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [inlineNotificationIsVisible, setInlineNotificationIsVisible] =
     useState(true);
   const [checkbox, setCheckbox] = useState(false);
 
+  // Actions
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
@@ -24,11 +30,19 @@ export const useSettings = () => {
   const interpolationModes = ['lab', 'rgb', 'lrgb', 'hsl', 'lch'];
 
   const increaseSteps = () => {
-    steps < 15 && changeSteps(steps + 1);
+    if (steps < 15) {
+      const newAmount = steps + 1;
+      changeSteps(newAmount);
+      changePercentagesAmount(recalculateStepsPercentages(newAmount));
+    }
   };
 
   const decreaseSteps = () => {
-    steps > 0 && changeSteps(steps - 1);
+    if (steps < 15) {
+      const newAmount = steps - 1;
+      changeSteps(newAmount);
+      changePercentagesAmount(recalculateStepsPercentages(newAmount));
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +50,7 @@ export const useSettings = () => {
 
     if (Number.isInteger(value) && value >= 0 && value <= 15) {
       changeSteps(value);
+      changePercentagesAmount(recalculateStepsPercentages(value));
     }
   };
 

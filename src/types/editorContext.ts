@@ -15,5 +15,6 @@ export interface EditorContextProps {
       newColor: string | undefined,
     ) => void;
     changePercentage: (index: number, newValue: string) => void;
+    changePercentagesAmount: (newArray: string[]) => void;
   };
 }
