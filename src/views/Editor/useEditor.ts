@@ -12,16 +12,15 @@ export const useEditor = () => {
 
   const [colorRamp, setColorRamp] = useState<ColorRamp>({
     name: `Color Ramp ${colorRamps.length + 1}`,
-    steps: 13,
+    steps: 11,
     interpolationMode: 'lab',
     colors: {
-      extremeLeft: 'white',
+      extremeLeft: '#ffffff',
       central: undefined,
-      extremeRight: 'black',
+      extremeRight: '#000000',
     },
     percentages: [
       '0',
-      '5',
       '10',
       '20',
       '30',
@@ -31,7 +30,6 @@ export const useEditor = () => {
       '70',
       '80',
       '90',
-      '95',
       '100',
     ],
   });
@@ -50,7 +48,7 @@ export const useEditor = () => {
 
   const changeColor = (
     colorPosition: ColorRampColorPosition,
-    newColor: string,
+    newColor: string | undefined,
   ) => {
     setColorRamp((prevState) => ({
       ...prevState,

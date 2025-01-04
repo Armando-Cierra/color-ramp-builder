@@ -12,7 +12,7 @@ export interface EditorContextProps {
     changeInterpolationMode: (newInterpolationMode: InterpolationModes) => void;
     changeColor: (
       colorPosition: ColorRampColorPosition,
-      newColor: string,
+      newColor: string | undefined,
     ) => void;
     changePercentage: (index: number, newValue: string) => void;
   };

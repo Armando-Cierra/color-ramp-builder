@@ -11,6 +11,22 @@
       .react-colorful {
         width: 100%;
         margin-bottom: 1rem;
+        &.react-colorful--disabled {
+          opacity: 0.5;
+          position: relative;
+          .react-colorful__pointer {
+            display: none;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: not-allowed;
+          }
+        }
       }
       .mainColor_colorPicker_control {
         display: flex;

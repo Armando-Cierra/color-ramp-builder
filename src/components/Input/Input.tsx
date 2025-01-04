@@ -22,6 +22,7 @@ interface Props
   autoSelect?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onClean?: () => void;
+  isDisabled?: boolean;
 }
 
 export const Input = ({
@@ -31,6 +32,7 @@ export const Input = ({
   value: controlledValue,
   onClean,
   onFocus,
+  isDisabled,
   ...rest
 }: Props) => {
   const value = controlledValue ?? '';
@@ -46,6 +48,7 @@ export const Input = ({
   return (
     <div
       className={classNames('input', {
+        'input--disabled': isDisabled,
         [customClassName as string]: customClassName,
       })}
     >
@@ -63,6 +66,7 @@ export const Input = ({
         })}
         type="text"
         value={value}
+        disabled={isDisabled}
         onFocus={handleFocus}
         {...rest}
       />

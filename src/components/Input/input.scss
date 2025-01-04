@@ -1,3 +1,7 @@
+@mixin inputBorderStyle {
+  border: 1px solid var(--theme_border);
+}
+
 .input {
   display: flex;
   align-items: center;
@@ -8,9 +12,9 @@
     width: 100%;
     height: 100%;
     background: var(--theme_background_1);
-    border: 1px solid var(--theme_border);
     border-radius: 8px;
     padding: 12px;
+    @include inputBorderStyle;
     &:hover {
       border-color: var(--theme_border_active);
     }
@@ -35,5 +39,26 @@
   }
   .input_cleanButton {
     right: 8px;
+  }
+
+  &.input--disabled {
+    opacity: 0.5;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: not-allowed;
+    }
+    &:hover,
+    &:focus-visible {
+      .input_control {
+        @include inputBorderStyle;
+        box-shadow: none;
+      }
+    }
   }
 }

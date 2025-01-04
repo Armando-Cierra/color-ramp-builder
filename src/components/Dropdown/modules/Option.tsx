@@ -11,7 +11,6 @@ interface Props
 }
 
 export const Option = ({ children, isSelected, ...rest }: Props) => {
-  console.log(isSelected);
   return (
     <button
       className={classNames('dropdown_menu_option', {
