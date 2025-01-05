@@ -52,7 +52,8 @@
     "colorRamp": {
       "title": "Escala de Colores",
       "percentages": "Porcentajes",
-      "description": "Controla la cantidad de contraste para cada paso en la escala."
+      "description": "Controla la cantidad de contraste para cada paso en la escala.",
+      "reset": "Restaurar"
     }
   }
 }

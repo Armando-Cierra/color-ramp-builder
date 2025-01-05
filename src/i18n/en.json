@@ -52,7 +52,8 @@
     "colorRamp": {
       "title": "Color Ramp",
       "percentages": "Percentages",
-      "description": "Controls the amount of constrast for each step in teh scale."
+      "description": "Controls the amount of constrast for each step in teh scale.",
+      "reset": "Reset"
     }
   }
 }

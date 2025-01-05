@@ -61,7 +61,7 @@ export const useMainColors = () => {
 
   const toggleSwitch = (state: 'active' | 'inactive') => () => {
     if (state === 'active') {
-      changeColor('central', colorValues.central ?? '#ffffff');
+      changeColor('central', '#ffffff');
       setColorValues((prevState) => ({
         ...prevState,
         central: '#ffffff',

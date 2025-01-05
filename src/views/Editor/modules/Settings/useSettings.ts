@@ -38,7 +38,7 @@ export const useSettings = () => {
   };
 
   const decreaseSteps = () => {
-    if (steps < 15) {
+    if (steps > 2) {
       const newAmount = steps - 1;
       changeSteps(newAmount);
       changePercentagesAmount(recalculateStepsPercentages(newAmount));
@@ -48,7 +48,7 @@ export const useSettings = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
 
-    if (Number.isInteger(value) && value >= 0 && value <= 15) {
+    if (Number.isInteger(value) && value >= 1 && value <= 15) {
       changeSteps(value);
       changePercentagesAmount(recalculateStepsPercentages(value));
     }

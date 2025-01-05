@@ -4,14 +4,16 @@ export type InterpolationModes = 'rgb' | 'hsl' | 'lab' | 'lch' | 'lrgb';
 
 export type ColorRampColorPosition = 'extremeLeft' | 'central' | 'extremeRight';
 
+export type Colors = {
+  extremeLeft: string;
+  central: undefined | string;
+  extremeRight: string;
+};
+
 export interface ColorRamp {
   name: string;
   steps: number;
   interpolationMode: InterpolationModes;
-  colors: {
-    extremeLeft: string;
-    central: undefined | string;
-    extremeRight: string;
-  };
+  colors: Colors;
   percentages: string[];
 }
