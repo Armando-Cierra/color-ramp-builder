@@ -14,8 +14,11 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        .dropdown .dropdown_box {
-          background: var(--theme_background_2);
+        .dropdown {
+          width: 100px;
+          .dropdown_box {
+            background: var(--theme_background_2);
+          }
         }
       }
     }

@@ -29,6 +29,10 @@
       "github": "Proyecto de Github"
     }
   },
+  "error": {
+    "description": "La página que estas buscando no existe...",
+    "goHome": "Ir a Inicio"
+  },
   "editor": {
     "name": "Nombre:",
     "saveColorRamp": "Guardar Escala",

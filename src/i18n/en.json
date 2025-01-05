@@ -29,6 +29,10 @@
       "github": "Github Project"
     }
   },
+  "error": {
+    "description": "The page you’re looking for doesn’t exist...",
+    "goHome": "Go Home"
+  },
   "editor": {
     "name": "Name:",
     "saveColorRamp": "Save Color Ramp",
