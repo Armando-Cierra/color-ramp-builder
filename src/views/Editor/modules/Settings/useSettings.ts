@@ -27,10 +27,10 @@ export const useSettings = () => {
     localStorage.getItem('hideInlineNotification') ?? 'false',
   );
 
-  const interpolationModes = ['lab', 'rgb', 'lrgb', 'hsl', 'lch'];
+  const interpolationModes = ['rgb', 'hsl', 'lab', 'lch', 'lrgb'];
 
   const increaseSteps = () => {
-    if (steps < 15) {
+    if (steps < 20) {
       const newAmount = steps + 1;
       changeSteps(newAmount);
       changePercentagesAmount(recalculateStepsPercentages(newAmount));
@@ -48,7 +48,7 @@ export const useSettings = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
 
-    if (Number.isInteger(value) && value >= 1 && value <= 15) {
+    if (Number.isInteger(value) && value >= 1 && value <= 20) {
       changeSteps(value);
       changePercentagesAmount(recalculateStepsPercentages(value));
     }

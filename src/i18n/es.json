@@ -33,7 +33,7 @@
     "modalTitle": "Editar Nombre de la Escala",
     "settings": {
       "title": "Configuraciones",
-      "inlineNotification": "El máximo de pasos es limitado a 15 para garantizar un contraste claro entre diferentes modos de interpolación",
+      "inlineNotification": "El máximo de pasos es limitado a 20 para garantizar un contraste claro entre diferentes modos de interpolación",
       "amountOfSteps": "Cantidad de Pasos",
       "interpolationMode": "Modo de Interpolación",
       "modal": {

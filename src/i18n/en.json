@@ -33,7 +33,7 @@
     "modalTitle": "Edit Color Ramp Name",
     "settings": {
       "title": "Settings",
-      "inlineNotification": "The maximum number of steps is limited to 15 to ensure clear contrast between colors across different interpolation modes",
+      "inlineNotification": "The maximum number of steps is limited to 20 to ensure clear contrast between colors across different interpolation modes",
       "amountOfSteps": "Amount of Steps",
       "interpolationMode": "Interpolation Mode",
       "modal": {
