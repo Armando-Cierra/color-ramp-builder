@@ -37,7 +37,7 @@ export const Home = () => {
         <Card
           icon={<IconBrandGithub />}
           text={t('home.cards.github')}
-          linksTo="https://github.com/Armando-Cierra/css-theme-builder"
+          linksTo="https://github.com/Armando-Cierra/color-ramp-builder"
         />
       </div>
     </motion.div>

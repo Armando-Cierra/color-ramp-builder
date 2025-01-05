@@ -41,7 +41,8 @@ export const Header = () => {
           {t('general.goBack')}
         </Button>
         <div className="editor_header_content">
-          <h1>{colorRampName}</h1>
+          <span>{t('editor.name')}</span>
+          <h2>{colorRampName}</h2>
           <Button iconOnly onClick={openModal}>
             <IconEdit />
           </Button>

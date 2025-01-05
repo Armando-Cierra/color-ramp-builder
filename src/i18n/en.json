@@ -30,6 +30,7 @@
     }
   },
   "editor": {
+    "name": "Name",
     "saveColorRamp": "Save Color Ramp",
     "modalTitle": "Edit Color Ramp Name",
     "settings": {
