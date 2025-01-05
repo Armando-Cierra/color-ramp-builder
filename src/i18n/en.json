@@ -30,7 +30,7 @@
     }
   },
   "editor": {
-    "name": "Name",
+    "name": "Name:",
     "saveColorRamp": "Save Color Ramp",
     "modalTitle": "Edit Color Ramp Name",
     "settings": {
@@ -55,11 +55,13 @@
       "title": "Color Ramp",
       "percentages": "Percentages",
       "description": "Controls the amount of constrast for each step in teh scale.",
-      "reset": "Reset"
+      "reset": "Reset",
+      "copied": "copied to clipboard"
     },
     "results": {
       "title": "Results",
-      "colorFormat": "Color Format"
+      "colorFormat": "Color Format",
+      "copied": "Collection copied to clipboard"
     }
   }
 }

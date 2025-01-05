@@ -30,7 +30,7 @@
     }
   },
   "editor": {
-    "name": "Nombre",
+    "name": "Nombre:",
     "saveColorRamp": "Guardar Escala",
     "modalTitle": "Editar Nombre de la Escala",
     "settings": {
@@ -55,11 +55,13 @@
       "title": "Escala de Colores",
       "percentages": "Porcentajes",
       "description": "Controla la cantidad de contraste para cada paso en la escala.",
-      "reset": "Restaurar"
+      "reset": "Restaurar",
+      "copied": "copiado al portapapeles"
     },
     "results": {
       "title": "Resultados",
-      "colorFormat": "Formato de Color"
+      "colorFormat": "Formato de Color",
+      "copied": "Colección copiada a portapapeles"
     }
   }
 }

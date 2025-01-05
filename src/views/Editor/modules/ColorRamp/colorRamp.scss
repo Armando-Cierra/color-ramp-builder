@@ -44,8 +44,11 @@
     border-radius: 8px;
     .colorRamp_scale_color {
       width: 60px;
-      height: 30px;
+      height: 35px;
       border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       cursor: pointer;
       .tabler-icon {

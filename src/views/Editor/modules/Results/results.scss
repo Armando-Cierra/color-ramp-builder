@@ -32,6 +32,7 @@
           text-align: right;
           color: var(--theme_text_muted);
           font-family: monospace;
+          user-select: none;
         }
         .results_terminal_content_color_text {
           font-family: monospace;

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { getColorRamp, colorFormat } from '@/utils';
 import { EditorContext } from '../../context';
 import { ColorFormats, EditorContextProps } from '@/types';
+import { Slide, toast } from 'react-toastify';
 
 export const useResults = () => {
   const { t } = useTranslation();
@@ -28,7 +29,19 @@ export const useResults = () => {
       formattedColorRamp.push(colorFormat(color, selectedColorFormat));
     });
 
-    navigator.clipboard.writeText(formattedColorRamp.join('\n'));
+    navigator.clipboard.writeText(formattedColorRamp.join('\n')).then(() => {
+      toast(t('editor.results.copied'), {
+        position: 'bottom-center',
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'colored',
+        transition: Slide,
+      });
+    });
   };
 
   return {
