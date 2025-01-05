@@ -4,6 +4,8 @@ export type InterpolationModes = 'rgb' | 'hsl' | 'lab' | 'lch' | 'lrgb';
 
 export type ColorRampColorPosition = 'extremeLeft' | 'central' | 'extremeRight';
 
+export type ColorFormats = 'hex' | 'rgb' | 'hsl';
+
 export type Colors = {
   extremeLeft: string;
   central: undefined | string;

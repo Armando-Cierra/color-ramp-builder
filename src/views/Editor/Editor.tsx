@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Header, Settings, MainColors, ColorRamp } from './modules';
+import { Header, Settings, MainColors, ColorRamp, Results } from './modules';
 import { useEditor } from './useEditor';
 import { EditorContext } from './context';
 import './editor.scss';
@@ -26,6 +26,7 @@ export const Editor = () => {
           <Settings />
           <MainColors />
           <ColorRamp />
+          <Results />
         </div>
       </motion.div>
     </EditorContext.Provider>

@@ -15,6 +15,7 @@
     "dark": "Modo Oscuro",
     "inactive": "Inactivo",
     "active": "Activo",
+    "copy": "Copiar",
     "resolution": "Esta resolución no está disponible actualmente. Por favor, use una resolución más amplia."
   },
   "toolbar": {
@@ -54,6 +55,10 @@
       "percentages": "Porcentajes",
       "description": "Controla la cantidad de contraste para cada paso en la escala.",
       "reset": "Restaurar"
+    },
+    "results": {
+      "title": "Resultados",
+      "colorFormat": "Formato de Color"
     }
   }
 }

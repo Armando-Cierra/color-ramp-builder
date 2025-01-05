@@ -5,12 +5,11 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { IconChevronDown } from '@tabler/icons-react';
 import { Option } from './modules';
 import { useDropdown } from './useDropdown';
-import { InterpolationModes } from '@/types';
 import './dropdown.scss';
 
 interface Props
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  value: InterpolationModes;
+  value: string;
   children: ReactNode;
 }
 

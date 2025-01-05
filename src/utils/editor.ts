@@ -1,4 +1,4 @@
-import { Colors, InterpolationModes } from '@/types';
+import { ColorFormats, Colors, InterpolationModes } from '@/types';
 import chroma from 'chroma-js';
 
 export const recalculateStepsPercentages = (newAmount: number) => {
@@ -38,4 +38,13 @@ export const getColorRamp = (
 export const getTextContrastColor = (color: string) => {
   const contrastLevel = chroma.contrast('#fff', color);
   return contrastLevel <= 4 ? '#000000' : '#ffffff';
+};
+
+export const colorFormat = (color: string, format: ColorFormats) => {
+  if (format === 'hex') {
+    return chroma(color).hex();
+  }
+
+  // @ts-expect-error | chroma types are missing formats that are on the documentation
+  return chroma(color).css(format);
 };

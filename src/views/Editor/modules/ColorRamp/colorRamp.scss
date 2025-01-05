@@ -1,4 +1,5 @@
 .colorRamp {
+  margin-bottom: 2rem;
   .colorRamp_info {
     display: flex;
     align-items: center;
@@ -69,6 +70,18 @@
           0 0 0 2px var(--theme_background_1),
           0 0 0 4px var(--theme_outline);
       }
+    }
+  }
+  .colorRamp_numeration {
+    display: flex;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      margin-top: 0.5rem;
+      font-size: var(--font_size_small);
+      color: var(--theme_text_muted);
     }
   }
 }

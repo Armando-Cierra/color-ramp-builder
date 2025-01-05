@@ -15,6 +15,7 @@
     "dark": "Dark Mode",
     "inactive": "Inactive",
     "active": "Active",
+    "copy": "Copy",
     "resolution": "This screen resolution is not currently supported. Please use a wider resolution."
   },
   "toolbar": {
@@ -54,6 +55,10 @@
       "percentages": "Percentages",
       "description": "Controls the amount of constrast for each step in teh scale.",
       "reset": "Reset"
+    },
+    "results": {
+      "title": "Results",
+      "colorFormat": "Color Format"
     }
   }
 }

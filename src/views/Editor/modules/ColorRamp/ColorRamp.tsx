@@ -45,6 +45,11 @@ export const ColorRamp = () => {
           </button>
         ))}
       </div>
+      <div className="colorRamp_numeration">
+        {colorRamp.map((_, index) => (
+          <div>{index + 1}</div>
+        ))}
+      </div>
     </div>
   );
 };
