@@ -47,7 +47,7 @@ export const ColorRamp = () => {
       </div>
       <div className="colorRamp_numeration">
         {colorRamp.map((_, index) => (
-          <div>{index + 1}</div>
+          <div key={`colorRampNumb_${index}`}>{index + 1}</div>
         ))}
       </div>
     </div>

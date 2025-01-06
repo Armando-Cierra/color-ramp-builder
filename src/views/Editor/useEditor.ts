@@ -1,4 +1,5 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AppContext } from '@/context';
 import {
   AppContextProps,
@@ -6,11 +7,16 @@ import {
   ColorRampColorPosition,
   InterpolationModes,
 } from '@/types';
+import { uid } from 'uid';
 
 export const useEditor = () => {
+  const location = useLocation();
+
   const { colorRamps } = useContext(AppContext) as AppContextProps;
 
   const [colorRamp, setColorRamp] = useState<ColorRamp>({
+    id: uid(),
+    date: new Date().getTime(),
     name: `Color Ramp ${colorRamps.length + 1}`,
     steps: 13,
     interpolationMode: 'rgb',
@@ -73,6 +79,28 @@ export const useEditor = () => {
       percentages: newPercentages,
     }));
   };
+
+  useEffect(() => {
+    const defaultAction = () =>
+      setColorRamp((prevState) => ({
+        ...prevState,
+        name: `Color Ramp ${colorRamps.length + 1}`,
+      }));
+
+    if (!location.state) {
+      defaultAction();
+    } else {
+      const selectedColorRamp = colorRamps.find(
+        (colorRamp) => colorRamp.id === location.state,
+      );
+
+      if (!selectedColorRamp) {
+        defaultAction();
+      } else {
+        setColorRamp(selectedColorRamp as ColorRamp);
+      }
+    }
+  }, [colorRamps, location]);
 
   return {
     colorRamp,

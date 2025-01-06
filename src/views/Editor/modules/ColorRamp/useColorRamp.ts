@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { EditorContext } from '../../context';
 import { getColorRamp, recalculateStepsPercentages } from '@/utils';
 import { EditorContextProps } from '@/types';
-import { Slide, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export const useColorRamp = () => {
   const { t } = useTranslation();
@@ -41,17 +41,7 @@ export const useColorRamp = () => {
 
   const copyColor = (color: string) => () => {
     navigator.clipboard.writeText(color).then(() => {
-      toast(`${color} ${t('editor.colorRamp.copied')}`, {
-        position: 'bottom-center',
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: 'colored',
-        transition: Slide,
-      });
+      toast(`${color} ${t('editor.colorRamp.copied')}`);
     });
   };
 

@@ -16,7 +16,8 @@
     "inactive": "Inactive",
     "active": "Active",
     "copy": "Copy",
-    "resolution": "This screen resolution is not currently supported. Please use a wider resolution."
+    "resolution": "This screen resolution is not currently supported. Please use a wider resolution.",
+    "colorRampSaved": "Color ramp saved"
   },
   "toolbar": {
     "auto": "Automatic"
@@ -36,6 +37,7 @@
   "editor": {
     "name": "Name:",
     "saveColorRamp": "Save Color Ramp",
+    "updateColorRamp": "Update Color Ramp",
     "modalTitle": "Edit Color Ramp Name",
     "settings": {
       "title": "Settings",
@@ -66,6 +68,16 @@
       "title": "Results",
       "colorFormat": "Color Format",
       "copied": "Collection copied to clipboard"
+    }
+  },
+  "savedThemes": {
+    "title": "Saved Color Ramps",
+    "search": "Search by name...",
+    "noResults": "There are no results for this search...",
+    "empty": "It looks kinda empty here...",
+    "modal": {
+      "title": "Delete Color Ramp",
+      "description": "Are you sure you want to delete this color Ramp? Once deleted you won’t be able to recover it ."
     }
   }
 }

@@ -14,6 +14,9 @@ export const Header = () => {
     openModal,
     closeModal,
     changeValue,
+    saveColorRamp,
+    saveColorRampChanges,
+    editorType,
   } = useHeader();
 
   return (
@@ -46,7 +49,16 @@ export const Header = () => {
           <Button iconOnly onClick={openModal}>
             <IconEdit />
           </Button>
-          <Button variant="contrast">{t('editor.saveColorRamp')}</Button>
+          <Button
+            variant="contrast"
+            onClick={
+              editorType === 'new' ? saveColorRamp : saveColorRampChanges
+            }
+          >
+            {editorType === 'new'
+              ? t('editor.saveColorRamp')
+              : t('editor.updateColorRamp')}
+          </Button>
         </div>
       </div>
     </>

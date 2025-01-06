@@ -8,8 +8,14 @@ export const useApp = () => {
     setColorRamps((prevState) => [...prevState, newColorRamp]);
   };
 
-  const removeColorRamp = (index: number) => {
-    setColorRamps((prevState) => prevState.filter((_, i) => i !== index));
+  const removeColorRamp = (id: string) => {
+    setColorRamps((prevState) => {
+      const updatedColorRamps = prevState.filter(
+        (colorRamp) => colorRamp.id !== id,
+      );
+      localStorage.setItem('colorRamps', JSON.stringify(updatedColorRamps));
+      return [...updatedColorRamps];
+    });
   };
 
   useEffect(() => {

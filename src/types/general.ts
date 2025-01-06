@@ -13,6 +13,8 @@ export type Colors = {
 };
 
 export interface ColorRamp {
+  id: string;
+  date: number;
   name: string;
   steps: number;
   interpolationMode: InterpolationModes;
