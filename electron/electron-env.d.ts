@@ -23,10 +23,22 @@ declare namespace NodeJS {
 
 // Used in Renderer process, expose in `preload.ts`
 interface Window {
-  ipcRenderer: import('electron').IpcRenderer;
-  electronAPI: {
-    minimize: () => void;
-    maximize: () => void;
-    close: () => void;
+  // ipcRenderer: import('electron').IpcRenderer;
+  ipcRenderer: {
+    on: (
+      ...args: Parameters<import('electron').IpcRenderer['on']>
+    ) => import('electron').IpcRenderer;
+    off: (
+      ...args: Parameters<import('electron').IpcRenderer['off']>
+    ) => import('electron').IpcRenderer;
+    send: (...args: Parameters<import('electron').IpcRenderer['send']>) => void;
+    invoke: (
+      ...args: Parameters<import('electron').IpcRenderer['invoke']>
+    ) => Promise<unknown>;
+    windowControls: {
+      minimize: () => void;
+      maximize: () => void;
+      close: () => void;
+    };
   };
 }

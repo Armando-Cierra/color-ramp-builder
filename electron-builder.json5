@@ -21,6 +21,7 @@
       },
     ],
     artifactName: '${productName}-Windows-${version}-Setup.${ext}',
+    icon: 'public/isotype.ico',
   },
   nsis: {
     oneClick: false,

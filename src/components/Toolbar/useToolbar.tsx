@@ -67,15 +67,15 @@ export const useToolbar = () => {
   const navigateToHome = () => navigate('/');
 
   const minimizeWindows = () => {
-    window.electronAPI.minimize();
+    window.ipcRenderer.windowControls.minimize();
   };
 
   const maximizeWindows = () => {
-    window.electronAPI.maximize();
+    window.ipcRenderer.windowControls.maximize();
   };
 
   const closeWindows = () => {
-    window.electronAPI.close();
+    window.ipcRenderer.windowControls.close();
   };
 
   return {
