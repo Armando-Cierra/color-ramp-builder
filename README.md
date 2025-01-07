@@ -1,7 +1,7 @@
 <img src='./public/cover.png' width="100%"/>
 
 # Color Ramp Builder
-Color Ramp Builder is an App made for designers and for developers, facilitating the creation of custom and dynamic color ramps for design systems and other implemenattions.
+Is an App made for designers and for developers, facilitating the creation of custom and dynamic color ramps for design systems and other implemenattions.
 
 ## Installation
 The application is compatible with Windows and MacOS. Installers for both platforms are available as ZIP files in the [releases](https://github.com/Armando-Cierra/color-ramp-builder/releases) section.
