@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+<img src='./public/cover.png' width="100%"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Color Ramp Builder
+Color Ramp Builder is an App made for designers and for developers, facilitating the creation of custom and dynamic color ramps for design systems and other implemenattions.
 
-Currently, two official plugins are available:
+## Installation
+The application is compatible with Windows and MacOS. Installers for both platforms are available as ZIP files in the [releases](https://github.com/Armando-Cierra/color-ramp-builder/releases) section.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Web Version
+A web version of the application is also available and can be accessed [here](https://color-ramp-builder.netlify.app/)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Dependencies Used
+- [reactJS](https://react.dev/)
+- [typescript](https://www.typescriptlang.org/)
+- [electronJS](https://www.electronjs.org/)
+- [react-router-dom](https://reactrouter.com/)
+- [i18next](https://www.i18next.com/)
+- [chroma-js](https://gka.github.io/chroma.js/)
+- [react-colorful](https://omgovich.github.io/react-colorful/)
+- [framer-motion](https://motion.dev/)
+- [@tabler/icons-react](https://tabler.io/icons)
+- [classnames](https://github.com/JedWatson/classnames#readme)
+- [react-tooltip](https://github.com/ReactTooltip/react-tooltip#readme)
+- [react-toastify](https://fkhadra.github.io/react-toastify/introduction/)
+- [react-focus-lock](https://github.com/theKashey/react-focus-lock#readme)
+- [react-outside-click-handler](https://github.com/airbnb/react-outside-click-handler#readme)
+- [uid](https://github.com/lukeed/uid#readme)
