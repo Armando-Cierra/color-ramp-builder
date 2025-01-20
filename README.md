@@ -4,7 +4,7 @@
 Is an App made for designers and for developers, facilitating the creation of custom and dynamic color ramps for design systems and other implemenattions.
 
 ## Installation
-The application is compatible with Windows and MacOS. Installers for both platforms are available as ZIP files in the [releases](https://github.com/Armando-Cierra/color-ramp-builder/releases) section.
+The application is compatible with Windows, MacOS and Linux. Installers for the platforms are available as ZIP files in the [releases](https://github.com/Armando-Cierra/color-ramp-builder/releases) section.
 
 ## Web Version
 A web version of the application is also available and can be accessed [here](https://color-ramp-builder.netlify.app/)
