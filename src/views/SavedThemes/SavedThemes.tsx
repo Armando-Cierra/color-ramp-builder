@@ -17,6 +17,7 @@ export const SavedThemes = () => {
     closeModal,
     deleteColorRamp,
     handleFilter,
+    spaceKeyEvent,
   } = useSavedThemes();
 
   return (
@@ -63,6 +64,7 @@ export const SavedThemes = () => {
               className="savedThemes_content_element"
               key={colorRamp.id}
               onClick={goToColorRamp(colorRamp.id)}
+              onKeyDown={spaceKeyEvent(colorRamp.id)}
             >
               <span className="savedThemes_content_element_name">
                 {colorRamp.name}

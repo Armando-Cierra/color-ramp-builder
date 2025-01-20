@@ -43,6 +43,12 @@ function createWindow() {
     },
   });
 
+  // Ocultar la barra de menú en todas las plataformas
+  win.setMenuBarVisibility(false);
+
+  // Opcional: elimina completamente el menú
+  win.setMenu(null);
+
   win.webContents.setWindowOpenHandler(({ url }) => {
     // If the URL is external, open it in the default OS browser
     if (url.startsWith('http')) {

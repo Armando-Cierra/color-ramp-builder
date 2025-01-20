@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import chroma from 'chroma-js';
 import { EditorContext } from '../../context';
@@ -102,6 +102,14 @@ export const useMainColors = () => {
       showButtons: false,
     },
   ];
+
+  useEffect(() => {
+    setColorValues({
+      extremeLeft,
+      central,
+      extremeRight,
+    });
+  }, [extremeLeft, central, extremeRight]);
 
   return {
     t,

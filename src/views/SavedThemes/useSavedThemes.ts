@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AppContext } from '@/context';
@@ -43,12 +43,19 @@ export const useSavedThemes = () => {
     closeModal();
   };
 
-  const goToHome = () => navigate('/');
+  const goToHome = () => navigate(-1);
 
   const goToEditor = () => navigate('/editor');
 
   const goToColorRamp = (id: string) => () =>
     navigate(`/editor`, { state: id });
+
+  const spaceKeyEvent = (id: string) => (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.code === 'Space' && (e.target as HTMLElement).tagName !== 'BUTTON') {
+      e.preventDefault();
+      goToColorRamp(id)();
+    }
+  };
 
   return {
     t,
@@ -63,5 +70,6 @@ export const useSavedThemes = () => {
     filteredColorRamps,
     handleFilter,
     filter,
+    spaceKeyEvent,
   };
 };

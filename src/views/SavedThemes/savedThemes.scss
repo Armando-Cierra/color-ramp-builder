@@ -36,6 +36,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: ease-in-out 0.15s;
+      color: var(--theme_text_muted);
+      &:hover,
+      &:focus-visible {
+        border-color: var(--theme_border_active);
+        box-shadow: 0 0 0 1px var(--theme_border_active);
+        color: var(--theme_text);
+      }
       .savedThemes_content_element_right {
         display: flex;
         align-items: center;

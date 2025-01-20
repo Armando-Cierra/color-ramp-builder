@@ -39,7 +39,7 @@ export const Header = () => {
 
       {/* Content */}
       <div className="editor_header">
-        <Button variant="default" onClick={() => navigate('/')}>
+        <Button variant="default" onClick={() => navigate(-1)}>
           <IconArrowLeft />
           {t('general.goBack')}
         </Button>
