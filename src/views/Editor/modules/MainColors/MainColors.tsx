@@ -21,14 +21,18 @@ export const MainColors = () => {
         {colorPickersConfig.map(
           ({ position, label, color, value, isDisabled, showButtons }) => (
             <div className="mainColor_colorPicker" key={position}>
-              <HexColorPicker
-                className={classNames({
-                  'react-colorful--disabled':
-                    position === 'central' && central === undefined,
-                })}
-                color={color ?? '#ffffff'}
-                onChange={handleColorPicker(position)}
-              />
+              {isDisabled ? (
+                <div className="react-colorful--disabled" />
+              ) : (
+                <HexColorPicker
+                  className={classNames({
+                    'react-colorful--disabled':
+                      position === 'central' && central === undefined,
+                  })}
+                  color={color ?? '#ffffff'}
+                  onChange={handleColorPicker(position)}
+                />
+              )}
               <div className="mainColor_colorPicker_control">
                 <div className="mainColor_colorPicker_control_label">
                   <span>{label}</span>

@@ -34,6 +34,8 @@ export const useMainColors = () => {
   // Actions
   const handleColorPicker =
     (position: ColorRampColorPosition) => (color: string) => {
+      if (position === 'central') localStorage.setItem('centralColor', color);
+
       changeColor(position, color);
       setColorValues((prevState) => ({
         ...prevState,
@@ -60,12 +62,22 @@ export const useMainColors = () => {
     };
 
   const toggleSwitch = (state: 'active' | 'inactive') => () => {
+    const previousCentralColor = localStorage.getItem('centralColor');
+
     if (state === 'active') {
-      changeColor('central', '#ffffff');
-      setColorValues((prevState) => ({
-        ...prevState,
-        central: '#ffffff',
-      }));
+      if (previousCentralColor) {
+        changeColor('central', previousCentralColor);
+        setColorValues((prevState) => ({
+          ...prevState,
+          central: previousCentralColor,
+        }));
+      } else {
+        changeColor('central', '#ffffff');
+        setColorValues((prevState) => ({
+          ...prevState,
+          central: '#ffffff',
+        }));
+      }
     } else {
       changeColor('central', undefined);
       setColorValues((prevState) => ({

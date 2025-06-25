@@ -25,6 +25,8 @@ export const useApp = () => {
     } else {
       setColorRamps(JSON.parse(savedColorRamps));
     }
+
+    localStorage.removeItem('centralColor');
   }, []);
 
   return {

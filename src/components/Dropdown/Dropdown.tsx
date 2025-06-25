@@ -19,6 +19,7 @@ export const Dropdown = Object.assign(
       useDropdown(children);
 
     return (
+      //@ts-expect-error | This is a known issue with react-outside-click-handler
       <OutsideClickHandler onOutsideClick={closeDropdown}>
         <div
           className={classNames('dropdown', {

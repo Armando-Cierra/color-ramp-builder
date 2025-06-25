@@ -24,8 +24,8 @@ export const Editor = () => {
         <Header />
         <div className="editor_content">
           <Settings />
-          <MainColors />
           <ColorRamp />
+          <MainColors />
           <Results />
         </div>
       </motion.div>
